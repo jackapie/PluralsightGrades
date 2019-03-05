@@ -8,8 +8,25 @@ using System.Threading.Tasks;
 namespace PluralsightGrades.Tests.Types
 {
     [TestClass]
-    public class ReferenceTypesTests
+    public class TypesTests
     {
+        [TestMethod]
+        public void ReferenceTestsPassByValue()
+        {
+            GradeBook book1 = new GradeBook();
+            GradeBook book2 = book1;
+
+            GiveBookAName(book2);
+
+            Assert.AreEqual("A Grade Book", book1.Name);
+
+        }
+
+        private void GiveBookAName(GradeBook book)
+        {
+            book.Name = "A Grade Book";
+        }
+
         [TestMethod]
         public void StringComparisonTest()
         {
