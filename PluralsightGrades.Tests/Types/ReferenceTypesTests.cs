@@ -11,6 +11,20 @@ namespace PluralsightGrades.Tests.Types
     public class TypesTests
     {
         [TestMethod]
+        public void ValueTestsPassByValue()
+        {
+            int x = 46;
+            IncrementNumber(x);
+
+            Assert.AreEqual(46, x);
+        }
+
+        private void IncrementNumber(int number)
+        {
+            number += 1;
+        }
+
+        [TestMethod]
         public void ReferenceTestsPassByValue()
         {
             GradeBook book1 = new GradeBook();
