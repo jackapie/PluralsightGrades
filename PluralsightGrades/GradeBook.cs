@@ -45,7 +45,11 @@ namespace PluralsightGrades
             {
                 if (!String.IsNullOrEmpty(value))
                 {
-                    NameChanged(_name, value);
+                    if(_name != value)
+                    {
+                        NameChanged(_name, value);
+                    }
+                    
                     _name = value;
                 }
             }
