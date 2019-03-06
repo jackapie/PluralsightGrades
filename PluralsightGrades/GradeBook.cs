@@ -36,7 +36,7 @@ namespace PluralsightGrades
         }
 
         private string _name;
-        public NameChangedDelegate NameChanged;
+        public event NameChangedDelegate NameChanged;
         public string Name
         {
             get { return _name; }
