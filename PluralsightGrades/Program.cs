@@ -12,8 +12,12 @@ namespace PluralsightGrades
         {
             
             GradeBook book = new GradeBook();
+
+            book.NameChanged = new NameChangedDelegate(OnNameChanged);
+
             book.Name = "Jackie's Grade Book";
-            book.Name = null;
+            book.Name = "Grade Book";
+            
             book.AddGrades(91);
             book.AddGrades(89.5f);
             book.AddGrades(75);
@@ -24,6 +28,11 @@ namespace PluralsightGrades
             WriteResult("Highest", (int)stats.HighestGrade);
             WriteResult("Lowest", stats.LowestGrade);
 
+        }
+
+        static void OnNameChanged(string existingName, string newName)
+        {
+            Console.WriteLine($"Name changed from {existingName} to {newName}");
         }
 
         static void WriteResult(string description, int result)

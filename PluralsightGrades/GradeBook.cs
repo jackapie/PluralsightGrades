@@ -10,6 +10,7 @@ namespace PluralsightGrades
     {
         public GradeBook()
         {
+            _name = "Empty";
             grades = new List<float>();
         }
 
@@ -35,6 +36,7 @@ namespace PluralsightGrades
         }
 
         private string _name;
+        public NameChangedDelegate NameChanged;
         public string Name
         {
             get { return _name; }
@@ -43,6 +45,7 @@ namespace PluralsightGrades
             {
                 if (!String.IsNullOrEmpty(value))
                 {
+                    NameChanged(_name, value);
                     _name = value;
                 }
             }
