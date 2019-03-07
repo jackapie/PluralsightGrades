@@ -45,14 +45,14 @@ namespace PluralsightGrades
             {
                 if (!String.IsNullOrEmpty(value))
                 {
-                    if(_name != value)
-                    {
-                        NameChangedEventArgs args = new NameChangedEventArgs();
-                        args.ExistingName = _name;
-                        args.NewName = value;
+                    //if(_name != value)
+                    //{
+                    //    NameChangedEventArgs args = new NameChangedEventArgs();
+                    //    args.ExistingName = _name;
+                    //    args.NewName = value;
 
-                        NameChanged(this, args);
-                    }
+                    //    NameChanged(this, args);
+                    //}
                     
                     _name = value;
                 }

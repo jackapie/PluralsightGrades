@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralsightGrades", "Plural
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralsightGrades.Tests", "PluralsightGrades.Tests\PluralsightGrades.Tests.csproj", "{6C737955-FFE3-47E6-8FCF-D87E6249FAE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralsightGradesTests", "PluralsightGradesTests\PluralsightGradesTests.csproj", "{2D47E53A-A1EA-48EF-922D-90B8308B4B9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6C737955-FFE3-47E6-8FCF-D87E6249FAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C737955-FFE3-47E6-8FCF-D87E6249FAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C737955-FFE3-47E6-8FCF-D87E6249FAE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D47E53A-A1EA-48EF-922D-90B8308B4B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D47E53A-A1EA-48EF-922D-90B8308B4B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D47E53A-A1EA-48EF-922D-90B8308B4B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D47E53A-A1EA-48EF-922D-90B8308B4B9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
