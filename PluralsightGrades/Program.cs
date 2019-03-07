@@ -13,8 +13,8 @@ namespace PluralsightGrades
             
             GradeBook book = new GradeBook();
 
-            book.NameChanged += new NameChangedDelegate(OnNameChanged);
-            book.NameChanged += new NameChangedDelegate(OnNameChanged2);
+            book.NameChanged += OnNameChanged;
+            book.NameChanged += OnNameChanged2;
             
 
             book.Name = "Jackie's Grade Book";
