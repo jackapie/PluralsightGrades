@@ -14,8 +14,7 @@ namespace PluralsightGrades
             GradeBook book = new GradeBook();
 
             book.NameChanged += OnNameChanged;
-            book.NameChanged += OnNameChanged2;
-            
+                        
 
             book.Name = "Jackie's Grade Book";
             book.Name = "Grade Book";
@@ -32,16 +31,12 @@ namespace PluralsightGrades
 
         }
 
-        static void OnNameChanged(string existingName, string newName)
+        static void OnNameChanged(object sender, NameChangedEventArgs args)
         {
-            Console.WriteLine($"Name changed from {existingName} to {newName}");
+            Console.WriteLine($"Name changed from {args.ExistingName} to {args.NewName}");
         }
 
-        static void OnNameChanged2(string existingName, string newName)
-        {
-            Console.WriteLine($"***");
-        }
-
+        
         static void WriteResult(string description, int result)
         {
             Console.WriteLine("{0}: {1}", description, result);
