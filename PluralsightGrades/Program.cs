@@ -12,7 +12,15 @@ namespace PluralsightGrades
         {
             GradeBook book = new GradeBook();
 
-            book.Name = null;
+            try
+            {
+                Console.WriteLine("Enter a Grade Book Name:");
+                book.Name = Console.ReadLine();
+            }
+            catch(ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             book.AddGrades(91);
             book.AddGrades(89.5f);
