@@ -20,7 +20,7 @@ namespace PluralsightGrades
             GradeStatistics statistics = new GradeStatistics();
             float sum = 0;
 
-            foreach(float grade in grades)
+            foreach (float grade in grades)
             {
                 statistics.HighestGrade = Math.Max(grade, statistics.HighestGrade);
                 statistics.LowestGrade = Math.Min(grade, statistics.LowestGrade);
@@ -52,19 +52,22 @@ namespace PluralsightGrades
 
             set
             {
-                if (!String.IsNullOrEmpty(value))
+                if (String.IsNullOrEmpty(value))
                 {
-                    //if(_name != value)
-                    //{
-                    //    NameChangedEventArgs args = new NameChangedEventArgs();
-                    //    args.ExistingName = _name;
-                    //    args.NewName = value;
-
-                    //    NameChanged(this, args);
-                    //}
-                    
-                    _name = value;
+                    throw new ArgumentException("Name cannot be null or empty");
                 }
+
+                //if(_name != value)
+                //{
+                //    NameChangedEventArgs args = new NameChangedEventArgs();
+                //    args.ExistingName = _name;
+                //    args.NewName = value;
+
+                //    NameChanged(this, args);
+                //}
+
+                _name = value;
+
             }
         }
 

@@ -12,6 +12,8 @@ namespace PluralsightGrades
         {
             GradeBook book = new GradeBook();
 
+            book.Name = null;
+
             book.AddGrades(91);
             book.AddGrades(89.5f);
             book.AddGrades(75);
