@@ -15,6 +15,7 @@ namespace PluralsightGrades
             book.AddGrades(91);
             book.AddGrades(89.5f);
             book.AddGrades(75);
+            book.WriteGrades(Console.Out);
 
             GradeStatistics stats = book.CalculateStatistics();
             WriteResult("Average", stats.AverageGrade);
