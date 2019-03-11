@@ -29,6 +29,7 @@ namespace PluralsightGrades
 
             StreamWriter outputFile = File.CreateText("grades.txt");
             book.WriteGrades(outputFile);
+            outputFile.Close();
 
             GradeStatistics stats = book.CalculateStatistics();
             WriteResult("Average", stats.AverageGrade);
