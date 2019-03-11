@@ -15,8 +15,10 @@ namespace PluralsightGrades
             grades = new List<float>();
         }
 
-        public GradeStatistics ComputeStatistics()
+        public virtual GradeStatistics ComputeStatistics()
         {
+            Console.WriteLine("GradeBook::ComputeStatistics");
+
             GradeStatistics statistics = new GradeStatistics();
             float sum = 0;
 

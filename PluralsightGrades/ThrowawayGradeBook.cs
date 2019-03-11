@@ -8,8 +8,9 @@ namespace PluralsightGrades
 {
     public class ThrowawayGradeBook : GradeBook
     {
-        public GradeStatistics ComputeStatistics()
+        public override GradeStatistics ComputeStatistics()
         {
+            Console.WriteLine("ThrowawayGradeBook::ComputeStatistics");
             float lowest = float.MaxValue;
             foreach(var grade in grades)
             {
