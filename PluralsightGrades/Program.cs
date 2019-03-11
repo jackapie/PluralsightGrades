@@ -13,32 +13,48 @@ namespace PluralsightGrades
         {
             GradeBook book = new GradeBook();
 
-            try
-            {
-                Console.WriteLine("Enter a Grade Book Name:");
-                book.Name = Console.ReadLine();
-            }
-            catch(ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            GetBookName(book);
+            AddGrades(book);
+            SaveGrades(book);
+            WriteResults(book);
 
-            book.AddGrades(91);
-            book.AddGrades(89.5f);
-            book.AddGrades(75);
+        }
 
-            using (StreamWriter outputFile = File.CreateText("grades.txt"))
-            {
-                book.WriteGrades(outputFile);
-            }
-                
-            
+        private static void WriteResults(GradeBook book)
+        {
             GradeStatistics stats = book.CalculateStatistics();
             WriteResult("Average", stats.AverageGrade);
             WriteResult("Highest", stats.HighestGrade);
             WriteResult("Lowest", stats.LowestGrade);
             WriteResult(stats.Description, stats.LetterGrade);
+        }
 
+        private static void SaveGrades(GradeBook book)
+        {
+            using (StreamWriter outputFile = File.CreateText("grades.txt"))
+            {
+                book.WriteGrades(outputFile);
+            }
+        }
+
+        private static void AddGrades(GradeBook book)
+        {
+            book.AddGrades(91);
+            book.AddGrades(89.5f);
+            book.AddGrades(75);
+        }
+
+        private static void GetBookName(GradeBook book)
+        {
+            try
+            {
+                Console.WriteLine("Enter a Grade Book Name:");
+                book.Name = Console.ReadLine();
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         static void WriteResult(string description, string result)
