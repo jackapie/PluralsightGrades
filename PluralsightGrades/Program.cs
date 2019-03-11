@@ -27,10 +27,12 @@ namespace PluralsightGrades
             book.AddGrades(89.5f);
             book.AddGrades(75);
 
-            StreamWriter outputFile = File.CreateText("grades.txt");
-            book.WriteGrades(outputFile);
-            outputFile.Close();
-
+            using (StreamWriter outputFile = File.CreateText("grades.txt"))
+            {
+                book.WriteGrades(outputFile);
+            }
+                
+            
             GradeStatistics stats = book.CalculateStatistics();
             WriteResult("Average", stats.AverageGrade);
             WriteResult("Highest", stats.HighestGrade);
