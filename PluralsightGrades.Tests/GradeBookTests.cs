@@ -19,7 +19,7 @@ namespace PluralsightGrades.Tests
             book.AddGrades(10);
             book.AddGrades(90);
 
-            GradeStatistics result = book.CalculateStatistics();
+            GradeStatistics result = book.ComputeStatistics();
 
             Assert.AreEqual(90, result.HighestGrade);
         }
@@ -32,7 +32,7 @@ namespace PluralsightGrades.Tests
             book.AddGrades(10);
             book.AddGrades(90);
 
-            GradeStatistics result = book.CalculateStatistics();
+            GradeStatistics result = book.ComputeStatistics();
 
             Assert.AreEqual(10, result.LowestGrade);
         }
@@ -46,7 +46,7 @@ namespace PluralsightGrades.Tests
             book.AddGrades(89.5f);
             book.AddGrades(75);
 
-            GradeStatistics result = book.CalculateStatistics();
+            GradeStatistics result = book.ComputeStatistics();
 
             Assert.AreEqual(85.16, result.AverageGrade, 0.01);
         }

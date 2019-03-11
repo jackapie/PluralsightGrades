@@ -15,7 +15,7 @@ namespace PluralsightGrades
             grades = new List<float>();
         }
 
-        public GradeStatistics CalculateStatistics()
+        public GradeStatistics ComputeStatistics()
         {
             GradeStatistics statistics = new GradeStatistics();
             float sum = 0;
@@ -71,6 +71,6 @@ namespace PluralsightGrades
             }
         }
 
-        private List<float> grades;
+        protected List<float> grades;
     }
 }

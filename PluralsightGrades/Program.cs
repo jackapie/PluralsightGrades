@@ -22,7 +22,7 @@ namespace PluralsightGrades
 
         private static void WriteResults(GradeBook book)
         {
-            GradeStatistics stats = book.CalculateStatistics();
+            GradeStatistics stats = book.ComputeStatistics();
             WriteResult("Average", stats.AverageGrade);
             WriteResult("Highest", stats.HighestGrade);
             WriteResult("Lowest", stats.LowestGrade);
