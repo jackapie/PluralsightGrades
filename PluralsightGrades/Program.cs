@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,9 @@ namespace PluralsightGrades
             book.AddGrades(91);
             book.AddGrades(89.5f);
             book.AddGrades(75);
-            book.WriteGrades(Console.Out);
+
+            StreamWriter outputFile = File.CreateText("grades.txt");
+            book.WriteGrades(outputFile);
 
             GradeStatistics stats = book.CalculateStatistics();
             WriteResult("Average", stats.AverageGrade);
