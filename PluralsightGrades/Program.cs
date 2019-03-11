@@ -11,13 +11,18 @@ namespace PluralsightGrades
     {
         static void Main(string[] args)
         {
-            GradeBook book = new ThrowawayGradeBook();
+            GradeBook book = CreateBook();
 
             //GetBookName(book);
             AddGrades(book);
             SaveGrades(book);
             WriteResults(book);
 
+        }
+
+        private static ThrowawayGradeBook CreateBook()
+        {
+            return new ThrowawayGradeBook();
         }
 
         private static void WriteResults(GradeBook book)
