@@ -11,7 +11,7 @@ namespace PluralsightGrades
     {
         static void Main(string[] args)
         {
-            GradeTracker book = CreateBook();
+            IGradeTracker book = CreateBook();
 
             //GetBookName(book);
             AddGrades(book);
@@ -20,12 +20,12 @@ namespace PluralsightGrades
 
         }
 
-        private static GradeTracker CreateBook()
+        private static IGradeTracker CreateBook()
         {
             return new ThrowawayGradeBook();
         }
 
-        private static void WriteResults(GradeTracker book)
+        private static void WriteResults(IGradeTracker book)
         {
             GradeStatistics stats = book.ComputeStatistics();
             WriteResult("Average", stats.AverageGrade);
@@ -34,7 +34,7 @@ namespace PluralsightGrades
             WriteResult(stats.Description, stats.LetterGrade);
         }
 
-        private static void SaveGrades(GradeTracker book)
+        private static void SaveGrades(IGradeTracker book)
         {
             using (StreamWriter outputFile = File.CreateText("grades.txt"))
             {
@@ -42,14 +42,14 @@ namespace PluralsightGrades
             }
         }
 
-        private static void AddGrades(GradeTracker book)
+        private static void AddGrades(IGradeTracker book)
         {
             book.AddGrades(91);
             book.AddGrades(89.5f);
             book.AddGrades(75);
         }
 
-        private static void GetBookName(GradeTracker book)
+        private static void GetBookName(IGradeTracker book)
         {
             try
             {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PluralsightGrades
 {
-    public abstract class GradeTracker
+    public abstract class GradeTracker : IGradeTracker
     {
         public abstract void AddGrades(float grade);
         public abstract GradeStatistics ComputeStatistics();
