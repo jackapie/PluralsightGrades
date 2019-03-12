@@ -1,8 +1,9 @@
-﻿using System.IO;
+﻿using System.Collections;
+using System.IO;
 
 namespace PluralsightGrades
 {
-    internal interface IGradeTracker
+    internal interface IGradeTracker : IEnumerable
     {
         void AddGrades(float grade);
         GradeStatistics ComputeStatistics();
